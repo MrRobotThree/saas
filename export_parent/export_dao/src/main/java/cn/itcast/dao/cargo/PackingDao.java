@@ -20,5 +20,5 @@ public interface PackingDao {
 
     List<Packing> findByCompanyId(String id);
 
-//    afjakjfajkfl
+
 }

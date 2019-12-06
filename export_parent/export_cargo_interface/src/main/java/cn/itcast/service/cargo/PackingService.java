@@ -8,4 +8,5 @@ public interface PackingService {
 
     void save(Packing packing);
 
+    Packing findById(String id);
 }

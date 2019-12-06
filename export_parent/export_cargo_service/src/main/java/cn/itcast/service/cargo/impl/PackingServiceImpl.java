@@ -28,4 +28,10 @@ public class PackingServiceImpl implements PackingService {
     public void save(Packing packing) {
         packingDao.insertSelective(packing);
     }
+
+    @Override
+    public Packing findById(String id) {
+        Packing packing = packingDao.selectByPrimaryKey(id);
+        return packing;
+    }
 }

@@ -47,9 +47,9 @@ public class PackingController extends BaseController {
 
     @RequestMapping("/toUpdate")
     public String toUpdate(String id) {
-        packingService.
-
-        return "cargo/packing/packing-add";
+        Packing packing=packingService.findById(id);
+        request.setAttribute("packing",packing);
+        return "cargo/packing/packing-update";
     }
 
     @RequestMapping(value = "/edit", name = "添加装箱单")
