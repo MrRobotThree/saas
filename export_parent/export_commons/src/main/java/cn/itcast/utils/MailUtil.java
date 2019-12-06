@@ -20,7 +20,7 @@ public class MailUtil {
    //实现邮件发送的方法
    public static void sendMsg(String to ,String subject ,String content) throws Exception{
       Properties props = new Properties();
-      props.setProperty("mail.smtp.host", "smtp.sina.com");  //设置主机地址   smtp.qq.com    smtp.sina.com
+      props.setProperty("mail.smtp.host", "smtp.126.com");  //设置主机地址   smtp.qq.com    smtp.sina.com
 
       props.setProperty("mail.smtp.auth", "true");//授权认证 代码客户端访问 必须设置为true  需要手机验证
 
@@ -31,7 +31,7 @@ public class MailUtil {
       MimeMessage message = new MimeMessage(session);
 
       //4.设置消息的发送者
-      Address fromAddr = new InternetAddress("itcast_server@sina.com"); //51dacc7ca566937e
+      Address fromAddr = new InternetAddress("g15735692606@126.com"); //51dacc7ca566937e
       message.setFrom(fromAddr);
 
       //5.设置消息的接收者
@@ -47,7 +47,7 @@ public class MailUtil {
       //8.准备发送，得到火箭
       Transport transport = session.getTransport("smtp");
       //9.设置火箭的发射目标
-      transport.connect("smtp.sina.com", "itcast_server@sina.com", "51dacc7ca566937e"); //密码 授权密码!=登陆密码
+      transport.connect("smtp.126.com", "g15735692606@126.com", "Gjh981124"); //密码 授权密码!=登陆密码
       //10.发送
       transport.sendMessage(message, message.getAllRecipients());
 
@@ -56,7 +56,7 @@ public class MailUtil {
    }
 
    public static void main(String[] args) throws Exception {
-      MailUtil.sendMsg("shiyilong128@126.com" , "我们去玩把", "你好");
+      MailUtil.sendMsg("791850154@qq.com" , "我们去玩把", "你好");
    }
 
 }

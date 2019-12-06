@@ -5,6 +5,8 @@ import cn.itcast.domain.cargo.ExportExample;
 import cn.itcast.vo.ExportResult;
 import com.github.pagehelper.PageInfo;
 
+import java.util.List;
+
 
 public interface ExportService {
 
@@ -19,4 +21,6 @@ public interface ExportService {
 	PageInfo findAll(ExportExample example, int page, int size);
 
     void updateE(ExportResult exportResult);
+
+    List<Export> findAllBystate(String s);
 }

@@ -126,7 +126,7 @@ public class ExportServiceImpl implements ExportService {
 //        Export export = exportDao.selectByPrimaryKey(exportId);
         Export export = new Export();
         export.setId(exportId);
-        export.setState(exportResult.getState());
+        export.setState(1);
         export.setRemark(exportResult.getRemark());
         exportDao.updateByPrimaryKeySelective(export);
 //        报运单货物表
@@ -138,5 +138,11 @@ public class ExportServiceImpl implements ExportService {
             exportProduct.setTax( product.getTax());
             exportProductDao.updateByPrimaryKeySelective(exportProduct);
         }
+    }
+
+    @Override
+    public List<Export> findAllBystate(String state) {
+        List<Export> exportList=exportDao.selectByState(state);
+        return exportList;
     }
 }

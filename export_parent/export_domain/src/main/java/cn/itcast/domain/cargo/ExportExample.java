@@ -1217,7 +1217,7 @@ public class ExportExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andStateEqualTo(Long value) {
+        public Criteria andStateEqualTo(Integer value) {
             addCriterion("state =", value, "state");
             return (Criteria) this;
         }

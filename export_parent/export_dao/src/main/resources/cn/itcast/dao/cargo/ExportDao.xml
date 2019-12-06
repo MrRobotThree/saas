@@ -310,4 +310,8 @@
         </set>
         where id = #{id,jdbcType=VARCHAR}
     </update>
+
+    <select id="selectByState" parameterType="string" resultMap="BaseResultMap">
+        select * from co_export where state=#{state};
+    </select>
 </mapper>
