@@ -23,7 +23,8 @@ public class User implements Serializable {
     private String telephone ;
     private String birthday   ;
     private Integer degree  ;
-
+    //微信的唯一标识 unionid
+    private String wxunionid;
     /*  用户级别 0 作为内部控制，租户企业不能使用
         0-saas 管理员
         1-企业管理员
