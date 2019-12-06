@@ -19,4 +19,6 @@ public interface PackingDao {
     int updateByPrimaryKey(Packing record);
 
     List<Packing> findByCompanyId(String id);
+
+//    afjakjfajkfl
 }
