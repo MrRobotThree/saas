@@ -33,6 +33,10 @@
       select * from pe_user where company_id=#{companyId} order by order_no ,create_time desc
     </select>
 
+    <!--根据微信id查询用户-->
+    <select id="finbByUnionid" parameterType="string" resultMap="BaseResultMap">
+        select * from pe_user where wxunionid =#{unionid}
+    </select>
     <insert id="save" parameterType="user">
  insert INTO pe_user(
         user_id,
@@ -159,6 +163,9 @@
             </if>
             <if test="remark!=null and remark!=''">
                 remark      =#{remark},
+            </if>
+            <if test="wxunionid!=null and wxunionid!=''">
+                wxunionid      =#{wxunionid},
             </if>
         </set>
         where user_id=#{id}

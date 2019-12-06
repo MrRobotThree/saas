@@ -101,6 +101,12 @@ public class UserServiceImpl implements UserService {
         return userDao.findByEmail(email);
     }
 
+    //根据微信id查询用户
+    @Override
+    public User finbByUnionid(String unionid) {
+        return userDao.finbByUnionid(unionid);
+    }
+
     public static void main(String[] args) {
         System.out.println(new Md5Hash("123456","admin@export.com",2).toString());
         System.out.println(new Md5Hash("123456","laowang@export.com",2).toString());

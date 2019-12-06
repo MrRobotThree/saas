@@ -24,4 +24,7 @@ public interface UserService {
     List<String> findRoleIdsByUserId(String id);
 
     User findByEmail(String email);
+
+    //根据微信id查询用户
+    User finbByUnionid(String unionid_s);
 }
