@@ -1,3 +1,4 @@
 /export_parent/.idea
 *.iml
 /export_parent/export_manager_web/src/main/webapp/plugins
+/.idea
