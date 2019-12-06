@@ -32,6 +32,7 @@
     delete from co_packing_list
     where packing_list_id = #{packingListId,jdbcType=VARCHAR}
   </delete>
+  <!--affaf-->
   <insert id="insert" parameterType="Packing">
     insert into co_packing_list (packing_list_id, seller, buyer, 
       invoice_no, invoice_date, marks, 
