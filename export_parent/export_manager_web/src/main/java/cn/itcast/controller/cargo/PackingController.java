@@ -1,6 +1,7 @@
 package cn.itcast.controller.cargo;
 
 import cn.itcast.controller.BaseController;
+import cn.itcast.domain.cargo.Export;
 import cn.itcast.domain.cargo.ExportExample;
 import cn.itcast.domain.cargo.Packing;
 import cn.itcast.service.cargo.ExportService;
@@ -63,9 +64,27 @@ public class PackingController extends BaseController {
             packing.setCompanyId(getCompanyId());
             packing.setCompanyName(getCompanyName());
             packingService.save(packing);
+        }else {
+            packingService.update(packing);
         }
         return "redirect:/cargo/packing/list.do";
     }
 
+    @RequestMapping(value = "delete",name = "删除装箱单")
+    public String delete(String id){
+        packingService.deleteById(id);
+        return "redirect:/cargo/packing/list.do";
+    }
+
+    @RequestMapping(value = "submit",name = "提交装箱单")
+    public String submit (String id){
+        Packing packing = packingService.findById(id);
+        packing.setState(1L);
+        packingService.update(packing);
+        Export export = exportService.findById(id);
+        export.setState(2);
+        exportService.update(export);
+        return "redirect:/cargo/packing/list.do";
+    }
 
 }

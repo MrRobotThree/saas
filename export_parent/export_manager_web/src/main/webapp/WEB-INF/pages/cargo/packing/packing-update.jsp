@@ -44,7 +44,7 @@
             </script>
             <%--enctype="multipart/form-data"--%>
             <form id="editForm" action="${ctx}/cargo/packing/edit.do" method="post" enctype="multipart/form-data">
-                <%--<input type="hidden" name="packingListId" value="${packingListId}">--%>
+                <input type="hidden" name="packingListId" value="${packing.packingListId}">
                 <div class="row data-type" style="margin: 0px">
                     <div class="col-md-2 title">卖方</div>
                     <div class="col-md-4 data">

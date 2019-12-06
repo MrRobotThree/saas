@@ -34,4 +34,15 @@ public class PackingServiceImpl implements PackingService {
         Packing packing = packingDao.selectByPrimaryKey(id);
         return packing;
     }
+
+    @Override
+    public void update(Packing packing) {
+        packingDao.updateByPrimaryKeySelective(packing);
+    }
+
+    @Override
+    public void deleteById(String id) {
+        packingDao.deleteByPrimaryKey(id);
+    }
+
 }

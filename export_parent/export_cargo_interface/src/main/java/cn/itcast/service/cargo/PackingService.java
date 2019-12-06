@@ -9,4 +9,8 @@ public interface PackingService {
     void save(Packing packing);
 
     Packing findById(String id);
+
+    void update(Packing packing);
+
+    void deleteById(String id);
 }
