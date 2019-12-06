@@ -27,4 +27,5 @@ public interface ContractService {
 	public PageInfo findAll(ContractExample example, int page, int size);
 
     List<ContractProductVo> findContractProductVoByShipTime(String inputDate,String companyId);
+
 }

@@ -73,16 +73,16 @@
 <!-- 正文区域 -->
 <section class="content">
 
-    <!-- .box-body -->
-    <div class="box box-primary">
-        <div class="box-header with-border">
-            <h3 class="box-title">报运单列表</h3>
-        </div>
+                   <!-- .box-body -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">报运单列表</h3>
+                    </div>
 
-        <div class="box-body">
+                    <div class="box-body">
 
-            <!-- 数据表格 -->
-            <div class="table-box">
+                        <!-- 数据表格 -->
+                        <div class="table-box">
 
                 <!--工具栏-->
                 <div class="pull-left">
@@ -136,8 +136,8 @@
                             <td>${o.priceCondition}</td>
                             <td>
                                 <c:if test="${o.state==0}">草稿</c:if>
-                                <c:if test="${o.state==1}"><font color="green">已上报</font></c:if>
-                                <c:if test="${o.state==2}"><font color="red">已报运</font></c:if>
+                                <c:if test="${o.state==1}"><font color="green">已报运</font></c:if>
+                                <c:if test="${o.state==2}"><font color="red">已装箱</font></c:if>
                             </td>
                             <td>
                                 <a href="${ctx }/cargo/export/toView.do?id=${o.id}">[查看]</a>

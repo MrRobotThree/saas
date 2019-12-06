@@ -31,4 +31,6 @@ public interface ExportDao {
      * 更新
      */
     int updateByPrimaryKeySelective(Export record);
+
+    List<Export> selectByState(String state);
 }
