@@ -1,39 +1,25 @@
 package cn.itcast.controller.cargo;
 
 import cn.itcast.controller.BaseController;
-import cn.itcast.domain.cargo.Export;
 import cn.itcast.domain.cargo.ExportExample;
 import cn.itcast.domain.cargo.Packing;
-import cn.itcast.domain.system.User;
 import cn.itcast.service.cargo.ExportService;
-import cn.itcast.service.system.PackingService;
-import cn.itcast.utils.DownloadUtil;
+import cn.itcast.service.cargo.PackingService;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang.StringUtils;
-import org.apache.ibatis.annotations.Param;
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.ss.util.CellRangeAddress;
-import org.apache.poi.xssf.streaming.SXSSFWorkbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import sun.security.krb5.internal.PAData;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
-import java.util.UUID;
 
 @Controller
 @RequestMapping("/cargo/packing")
 public class PackingController extends BaseController {
 
-    @Autowired
+    @Reference
     private PackingService packingService;
     @Reference
     private ExportService exportService;
@@ -61,7 +47,7 @@ public class PackingController extends BaseController {
 
     @RequestMapping("/toUpdate")
     public String toUpdate(String id) {
-        packingService.findAll()
+        packingService.
 
         return "cargo/packing/packing-add";
     }
